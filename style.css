@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #111;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6eb43f;
+}
+
+.search i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.tv-container {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+}
+
+.channel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    width: 60%;
+}
+
+.channel {
+    aspect-ratio: 1;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.channel img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.channel.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(110, 180, 63, 0.7);
+    border: 2px solid #6eb43f;
+}
+
+.channel-info {
+    width: 40%;
+    background-color: #222;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-content h2 {
+    color: #6eb43f;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.info-content p {
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+.launch-button {
+    background-color: #6eb43f;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.launch-button:hover {
+    background-color: #5da336;
+}
+
+.navigation-help {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.nav-help-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #aaa;
+}
+
+.nav-help-item i {
+    font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tv-container {
+        flex-direction: column;
+    }
+    
+    .channel-grid {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .channel-info {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
